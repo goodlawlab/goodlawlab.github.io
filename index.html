@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>좋은법연구소 | 자치/재정 — 실천적 법학</title>
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 88"><path d="M22 24 Q43 10 65 24 T108 24" fill="none" stroke="%231a2f4b" stroke-width="8" stroke-linecap="round"/><circle cx="43" cy="6" r="7" fill="%231a2f4b"/><circle cx="65" cy="11" r="9" fill="%23b08d57"/><circle cx="87" cy="6" r="7" fill="%231a2f4b"/><path d="M40 42 L40 76 L90 76 L90 42" fill="none" stroke="%23b08d57" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 58 L90 58" stroke="%23b08d57" stroke-width="8" stroke-linecap="round"/></svg>'>
+<meta name="description" content="좋은법연구소(자치/재정) — 지방자치의 위기에 법으로 답을 찾는 실천적 법학 독립연구소. 문제 어젠다, 데이터 진단, 입법·제도 대안을 제시합니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="좋은법연구소">
+<meta property="og:title" content="좋은법연구소 | 자치/재정">
+<meta property="og:description" content="시대의 변화에 응답하고, 사람을 향해 움직이는 법 — 지역의 현실에서 실천되는 '좋은법'을 연구합니다.">
+<meta property="og:url" content="https://goodlaw.re.kr/">
+<meta property="og:image" content="https://goodlaw.re.kr/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    --navy: #1a2f4b;
+    --navy-light: #2c4a73;
+    --accent: #b08d57;
+    --alert: #a44a3f;
+    --bg: #fdfcfa;
+    --bg-alt: #f4f1ec;
+    --text: #2b2b2b;
+    --text-muted: #6b6b6b;
+    --border: #e3ded6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+  }
+  h1, h2, h3 { font-family: 'Noto Serif KR', serif; color: var(--navy); }
+
+  /* ── Nav ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(253,252,250,.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1040px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Noto Serif KR', serif; font-weight: 700;
+    font-size: 1.05rem; color: var(--navy); text-decoration: none;
+    letter-spacing: .02em;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .nav-logo svg { display: block; }
+  .brand-sub {
+    display: inline-block; transform: translateY(-.28em);
+    font-size: .55em; color: var(--accent); font-weight: 500;
+    letter-spacing: .03em; margin-left: .35em;
+  }
+  .brand-gold { color: #9a7a48; }
+  footer .brand-gold, .hero .brand-gold { color: #d9bd8d; }
+  .hero .brand-sub { color: #d9bd8d; }
+  .nav-links { display: flex; gap: 26px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--text-muted);
+    font-size: .92rem; font-weight: 500; transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-links .dropdown { position: relative; }
+  .nav-links .dropdown > a { cursor: pointer; }
+  .nav-links .dropdown > a::after { content: " ▾"; font-size: .75em; color: var(--accent); }
+  .dropdown-menu {
+    display: none; position: absolute; top: 100%; left: -14px; padding-top: 10px;
+    min-width: 190px; z-index: 200;
+  }
+  .dropdown:hover .dropdown-menu { display: block; }
+  .dropdown-menu ul {
+    list-style: none; background: #fff; border: 1px solid var(--border);
+    border-radius: 8px; box-shadow: 0 10px 24px rgba(26,47,75,.12);
+    padding: 8px; margin: 0;
+  }
+  .dropdown-menu li a, .dropdown-menu li span {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 9px 12px; border-radius: 5px; font-size: .9rem;
+  }
+  .dropdown-menu li a { color: var(--navy); font-weight: 600; }
+  .dropdown-menu li a:hover { background: var(--bg-alt); }
+  .dropdown-menu li a .now {
+    font-size: .68rem; font-weight: 700; color: #fff;
+    background: var(--accent); border-radius: 3px; padding: 2px 7px;
+  }
+  .dropdown-menu li span { color: #b3aea6; font-weight: 500; cursor: default; }
+  .dropdown-menu li span .soon {
+    font-size: .68rem; font-weight: 700; color: var(--text-muted);
+    background: var(--bg-alt); border: 1px solid var(--border);
+    border-radius: 3px; padding: 2px 7px;
+  }
+  .menu-toggle {
+    display: none; background: none; border: none; cursor: pointer;
+    font-size: 1.5rem; color: var(--navy); padding: 6px 10px; line-height: 1;
+  }
+  @media (max-width: 700px) {
+    .menu-toggle { display: block; }
+    .nav-links {
+      display: none; position: absolute; top: 64px; left: 0; right: 0;
+      flex-direction: column; gap: 0; background: #fff;
+      border-bottom: 1px solid var(--border); box-shadow: 0 12px 24px rgba(26,47,75,.1);
+      padding: 8px 0;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links > li > a { display: block; padding: 13px 24px; font-size: 1rem; }
+    .nav-links .dropdown-menu {
+      display: block; position: static; padding: 0 0 4px 24px; min-width: 0;
+    }
+    .nav-links .dropdown-menu ul { border: none; box-shadow: none; padding: 0; background: transparent; }
+    .nav-links .dropdown > a::after { content: ""; }
+  }
+
+  /* ── Hero ── */
+  header.hero {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: #fff; padding: 100px 24px 92px;
+  }
+  .hero-inner { max-width: 1040px; margin: 0 auto; }
+  .hero .kicker {
+    display: flex; align-items: center; gap: 14px;
+    font-size: .92rem; font-weight: 600; letter-spacing: .04em;
+    color: #d9bd8d; margin-bottom: 20px;
+  }
+  .hero .kicker .en { font-weight: 400; font-size: .78rem; color: #cdd6e2; letter-spacing: .02em; }
+  .hero .kicker svg { flex-shrink: 0; }
+  .hero h1 {
+    color: #fff; font-size: clamp(1.6rem, 3.6vw, 2.5rem);
+    font-weight: 700; line-height: 1.45; margin-bottom: 22px;
+  }
+  .hero h1 em { font-style: normal; color: #d9bd8d; }
+  .hero p.tagline {
+    font-size: 1.05rem; font-weight: 300; color: #cdd6e2;
+    max-width: 680px; margin-bottom: 38px;
+  }
+  .hero .btn {
+    display: inline-block; padding: 13px 30px; border-radius: 4px;
+    text-decoration: none; font-weight: 500; font-size: .95rem;
+    background: var(--accent); color: #fff; transition: background .2s;
+  }
+  .hero .btn:hover { background: #9a7a48; }
+  .hero .btn.ghost {
+    background: transparent; border: 1px solid rgba(255,255,255,.45); margin-left: 12px;
+  }
+  .hero .btn.ghost:hover { background: rgba(255,255,255,.1); }
+
+  /* ── Method strip ── */
+  .method-strip {
+    background: #11213a; color: #fff; padding: 0 24px;
+  }
+  .method-inner {
+    max-width: 1040px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+  }
+  .method-step {
+    padding: 26px 20px; text-align: center;
+    border-left: 1px solid rgba(255,255,255,.08);
+  }
+  .method-step:first-child { border-left: none; }
+  .method-step .step-no {
+    font-size: .72rem; font-weight: 700; letter-spacing: .2em;
+    color: #d9bd8d; display: block; margin-bottom: 4px;
+  }
+  .method-step .step-name { font-weight: 600; font-size: 1.02rem; }
+  .method-step .step-desc { font-size: .8rem; color: #9fb0c5; margin-top: 2px; }
+  @media (max-width: 640px) {
+    .method-inner { grid-template-columns: 1fr; }
+    .method-step { border-left: none; border-top: 1px solid rgba(255,255,255,.08); padding: 16px; }
+  }
+
+  /* ── Sections ── */
+  section { padding: 80px 24px; }
+  section:nth-of-type(even) { background: var(--bg-alt); }
+  .section-inner { max-width: 1040px; margin: 0 auto; }
+  .section-label {
+    font-size: .8rem; font-weight: 700; letter-spacing: .18em;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 10px;
+  }
+  .section-label.with-symbol {
+    display: flex; align-items: center; gap: 9px; letter-spacing: .12em;
+  }
+  .section-label.with-symbol .kr { color: var(--navy); letter-spacing: .02em; }
+  section h2 { font-size: 1.75rem; margin-bottom: 12px; }
+  .section-lead { color: #555; max-width: 720px; margin-bottom: 34px; }
+
+  /* ── About ── */
+  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-grid p { margin-bottom: 16px; color: #444; }
+  .about-grid p strong { color: var(--navy); }
+  .profile-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 28px; box-shadow: 0 2px 12px rgba(26,47,75,.05);
+  }
+  .profile-photo {
+    position: relative; width: 96px; height: 96px; border-radius: 50%;
+    overflow: hidden; margin-bottom: 16px;
+    background: var(--bg-alt); border: 3px solid #ece6dc;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .profile-photo .ph-fallback {
+    font-family: 'Noto Serif KR', serif; font-size: 2rem;
+    font-weight: 600; color: var(--accent);
+  }
+  .profile-photo img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .profile-card h3 { font-size: 1.1rem; margin-bottom: 6px; }
+  .profile-card .role { font-size: .85rem; color: var(--accent); font-weight: 500; margin-bottom: 14px; }
+  .profile-card .list-label {
+    font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+    color: var(--accent); margin: 14px 0 4px;
+  }
+  .profile-card ul { list-style: none; font-size: .88rem; color: var(--text-muted); }
+  .profile-card li { padding: 5px 0; border-bottom: 1px dashed var(--border); }
+  .profile-card li:last-child { border-bottom: none; }
+
+  /* ── Agenda ── */
+  .agenda-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 900px) { .agenda-grid { grid-template-columns: 1fr; } }
+  .agenda-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 28px 26px; transition: transform .2s, box-shadow .2s;
+    border-top: 4px solid var(--alert);
+  }
+  .agenda-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(26,47,75,.08); }
+  .agenda-card .q {
+    font-size: .78rem; font-weight: 700; color: var(--alert);
+    letter-spacing: .08em; margin-bottom: 8px;
+  }
+  .agenda-card .agenda-more {
+    display: inline-block; margin-top: 14px; font-size: .84rem; font-weight: 600;
+    color: var(--navy); text-decoration: none;
+  }
+  .agenda-card .agenda-more:hover { color: var(--accent); }
+  .agenda-card h3 { font-size: 1.12rem; margin-bottom: 10px; line-height: 1.5; }
+  .agenda-card p { font-size: .89rem; color: var(--text-muted); }
+
+  /* ── Notes (현안 노트) ── */
+  .note-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .note-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 24px 22px; display: flex; flex-direction: column;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .note-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(26,47,75,.08); }
+  .note-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+  .note-meta .region {
+    font-size: .72rem; font-weight: 700; color: #fff;
+    background: var(--navy); border-radius: 3px; padding: 2px 8px;
+  }
+  .note-meta .topic {
+    font-size: .72rem; font-weight: 700; color: var(--alert);
+    background: #f6e9e7; border-radius: 3px; padding: 2px 8px;
+  }
+  .note-meta .date { font-size: .76rem; color: var(--text-muted); margin-left: auto; }
+  .note-card h3 { font-size: 1.02rem; line-height: 1.5; margin-bottom: 8px; }
+  .note-card p { font-size: .87rem; color: var(--text-muted); flex: 1; }
+  .note-card a.more {
+    margin-top: 14px; font-size: .82rem; font-weight: 500;
+    color: var(--navy); text-decoration: none;
+  }
+  .note-card a.more:hover { color: var(--accent); }
+
+  /* ── Reports ── */
+  .pub-list { display: flex; flex-direction: column; gap: 14px; }
+  .pub-item {
+    background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--navy);
+    border-radius: 6px; padding: 20px 24px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    flex-wrap: wrap;
+  }
+  .pub-item .meta { flex: 1; min-width: 240px; }
+  .pub-item .type {
+    display: inline-block; font-size: .72rem; font-weight: 700;
+    color: var(--navy); background: #e8edf4; border-radius: 3px;
+    padding: 2px 8px; margin-bottom: 8px; letter-spacing: .05em; margin-right: 6px;
+  }
+  .pub-item .type.alt { color: var(--alert); background: #f6e9e7; }
+  .pub-item h3 { font-size: 1.02rem; font-weight: 600; }
+  .pub-item .info { font-size: .82rem; color: var(--text-muted); margin-top: 4px; }
+  .pub-item a.download {
+    text-decoration: none; font-size: .85rem; font-weight: 500;
+    color: var(--navy); border: 1px solid var(--navy);
+    padding: 8px 18px; border-radius: 4px; white-space: nowrap;
+    transition: all .2s;
+  }
+  .pub-item a.download:hover { background: var(--navy); color: #fff; }
+  .pub-item .status {
+    font-size: .82rem; font-weight: 700; color: var(--text-muted);
+    background: var(--bg-alt); border: 1px solid var(--border);
+    padding: 8px 18px; border-radius: 4px; white-space: nowrap;
+  }
+  .pub-item .status.soon-strong {
+    color: #fff; background: var(--accent); border-color: var(--accent);
+  }
+
+  /* ── Data / Charts ── */
+  .chart-note { font-size: .82rem; color: var(--text-muted); margin-bottom: 28px; }
+  .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 820px) { .chart-grid { grid-template-columns: 1fr; } }
+  .chart-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 24px;
+  }
+  .chart-card h3 { font-size: 1rem; margin-bottom: 4px; }
+  .chart-card .src { font-size: .76rem; color: var(--text-muted); margin-bottom: 14px; }
+  .chart-wrap { position: relative; height: 280px; }
+
+  /* ── Director's note (소장 노트) ── */
+  .diary-list { max-width: 720px; }
+  .diary-item {
+    border-top: 1px dashed var(--border);
+    padding: 22px 0;
+  }
+  .diary-item:last-child { border-bottom: 1px dashed var(--border); }
+  .diary-item .d-date { font-size: .78rem; color: var(--text-muted); margin-bottom: 4px; }
+  .diary-item h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+  .diary-item p { font-size: .88rem; color: var(--text-muted); }
+  .diary-item a {
+    font-size: .82rem; color: var(--navy); text-decoration: none; font-weight: 500;
+  }
+  .diary-item a:hover { color: var(--accent); }
+  .diary-disclaimer { font-size: .78rem; color: var(--text-muted); margin-top: 18px; }
+
+  /* ── 당신의 좋은법 (참여 벽) ── */
+  .wall-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; margin-bottom: 44px;
+  }
+  .wall-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 26px 24px; display: flex; flex-direction: column;
+  }
+  .wall-card .qm {
+    font-family: 'Noto Serif KR', serif; font-size: 2rem; font-weight: 700;
+    color: var(--accent); line-height: 1; margin-bottom: 10px;
+  }
+  .wall-card p { font-size: .95rem; color: #3a3a3a; flex: 1; line-height: 1.8; }
+  .wall-card .who { margin-top: 16px; font-size: .8rem; color: var(--text-muted); }
+  .wall-card.invite {
+    background: transparent; border: 1.5px dashed var(--accent);
+    align-items: center; justify-content: center; text-align: center;
+    color: var(--accent); font-size: .92rem; font-weight: 500;
+  }
+  .wall-form {
+    background: #fff; border: 1px solid var(--border); border-radius: 10px;
+    padding: 32px; max-width: 720px; margin: 0 auto;
+  }
+  .wall-form h3 { font-size: 1.1rem; margin-bottom: 6px; }
+  .wall-form .form-note { font-size: .82rem; color: var(--text-muted); margin-bottom: 22px; }
+  .wall-form label { display: block; font-size: .85rem; font-weight: 600; color: var(--navy); margin: 14px 0 6px; }
+  .wall-form input, .wall-form textarea {
+    width: 100%; border: 1px solid var(--border); border-radius: 6px;
+    padding: 11px 14px; font-family: inherit; font-size: .95rem; background: var(--bg);
+  }
+  .wall-form input:focus, .wall-form textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
+  .wall-form textarea { min-height: 110px; resize: vertical; }
+  .wall-form button {
+    margin-top: 20px; background: var(--navy); color: #fff; border: none;
+    padding: 13px 30px; border-radius: 5px; font-size: .95rem; font-weight: 600;
+    cursor: pointer; transition: background .2s;
+  }
+  .wall-form button:hover { background: var(--navy-light); }
+  .wall-form .privacy { margin-top: 14px; font-size: .76rem; color: var(--text-muted); }
+
+  /* ── Contact ── */
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .contact-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 24px; text-align: center;
+  }
+  .contact-card .icon { font-size: 1.5rem; margin-bottom: 8px; }
+  .contact-card h3 { font-size: .95rem; margin-bottom: 6px; }
+  .contact-card p, .contact-card a { font-size: .88rem; color: var(--text-muted); text-decoration: none; word-break: break-all; }
+  .contact-card a:hover { color: var(--navy); }
+  .contact-card.wide {
+    display: flex; align-items: center; gap: 24px;
+    text-align: left; padding: 18px 28px;
+  }
+  .contact-card.wide .contact-mail {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.05rem; font-weight: 600; color: var(--navy);
+    white-space: nowrap;
+  }
+  .contact-card.wide .contact-mail:hover { color: var(--accent); }
+  .contact-card.wide p { margin: 0; font-size: .85rem; line-height: 1.6; }
+  @media (max-width: 640px) {
+    .contact-card.wide { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+
+  footer {
+    background: var(--navy); color: #9fb0c5;
+    padding: 36px 24px; font-size: .82rem;
+  }
+  .footer-inner { max-width: 1040px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#"><svg width="32" height="22" viewBox="0 0 130 88" aria-hidden="true"><path d="M22 24 Q43 10 65 24 T108 24" fill="none" stroke="#1a2f4b" stroke-width="8" stroke-linecap="round"/><circle cx="43" cy="6" r="7" fill="#1a2f4b"/><circle cx="65" cy="11" r="9" fill="#b08d57"/><circle cx="87" cy="6" r="7" fill="#1a2f4b"/><path d="M40 42 L40 76 L90 76 L90 42" fill="none" stroke="#b08d57" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 58 L90 58" stroke="#b08d57" stroke-width="8" stroke-linecap="round"/></svg><span><span class="brand-gold">좋은법</span>연구소<span class="brand-sub">자치/재정</span></span></a>
+    <button class="menu-toggle" aria-label="메뉴 열기" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li class="dropdown">
+        <a>연구분야</a>
+        <div class="dropdown-menu">
+          <ul>
+            <li><a href="#">자치 / 재정 <span class="now">현재</span></a></li>
+            <li><span>규제법 <span class="soon">준비중</span></span></li>
+            <li><span>AI미래법 <span class="soon">준비중</span></span></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="#about">비전</a></li>
+      <li><a href="#agenda">핵심 어젠다</a></li>
+      <li><a href="#notes">현안 노트</a></li>
+      <li><a href="#reports">대안 리포트</a></li>
+      <li><a href="#data">데이터 진단</a></li>
+      <li><a href="#director-note">소장 노트</a></li>
+      <li><a href="#your-goodlaw">당신의 좋은법</a></li>
+      <li><a href="#contact">연락처</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">
+      <svg width="44" height="30" viewBox="0 0 130 88" aria-hidden="true"><path d="M22 24 Q43 10 65 24 T108 24" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/><circle cx="43" cy="6" r="6" fill="#ffffff"/><circle cx="65" cy="11" r="7.5" fill="#d9bd8d"/><circle cx="87" cy="6" r="6" fill="#ffffff"/><path d="M40 42 L40 76 L90 76 L90 42" fill="none" stroke="#d9bd8d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 58 L90 58" stroke="#d9bd8d" stroke-width="6" stroke-linecap="round"/></svg>
+      <span>시대의 변화에 응답하고, 사람을 향해 움직이는 법 <span class="en">Laws that respond to change and move toward people</span></span>
+    </div>
+    <h1>책 속에 멈춰 서 있는 조문이 아니라,<br>지역의 현실에서 실천되는 법이 바로 <em>'좋은법'</em>입니다.</h1>
+    <p class="tagline">시대의 변화를 담지 못하는 법학은 이론의 유희에 불과하며, 현실을 외면한 법제는 무력합니다.<br>좋은법연구소는 낡은 도그마를 넘어 우리 지역 사회가 직면한 구체적인 제도적 위기들을 냉철하게 진단하고, 현실 세계에서 즉시 작동할 수 있는 실천적 대안을 모색합니다.</p>
+    <a class="btn" href="#agenda">2026 핵심 어젠다 보기</a>
+    <a class="btn ghost" href="#reports">대안 리포트</a>
+  </div>
+</header>
+
+<div class="method-strip">
+  <div class="method-inner">
+    <div class="method-step">
+      <span class="step-no">STEP 1 · PERCEPTION</span>
+      <div class="step-name">현실인식</div>
+      <div class="step-desc">날 것 그대로의 현실을 바라봅니다</div>
+    </div>
+    <div class="method-step">
+      <span class="step-no">STEP 2 · DIAGNOSIS</span>
+      <div class="step-name">심층진단</div>
+      <div class="step-desc">법적·제도적 렌즈로 정밀하게 분석합니다</div>
+    </div>
+    <div class="method-step">
+      <span class="step-no">STEP 3 · ALTERNATIVE</span>
+      <div class="step-name">대안제시</div>
+      <div class="step-desc">실천적인 제도 개선안을 제시합니다</div>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label with-symbol">
+      <svg width="26" height="18" viewBox="0 0 130 88" aria-hidden="true"><path d="M22 24 Q43 10 65 24 T108 24" fill="none" stroke="#1a2f4b" stroke-width="8" stroke-linecap="round"/><circle cx="43" cy="6" r="7" fill="#1a2f4b"/><circle cx="65" cy="11" r="9" fill="#b08d57"/><circle cx="87" cy="6" r="7" fill="#1a2f4b"/><path d="M40 42 L40 76 L90 76 L90 42" fill="none" stroke="#b08d57" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 58 L90 58" stroke="#b08d57" stroke-width="8" stroke-linecap="round"/></svg>
+      <span><span class="kr">좋은법연구소의</span> VISION</span>
+    </div>
+    <h2>지역의 현실을 바꾸는 '좋은법'의 정치를 시작합니다.</h2>
+    <div class="about-grid">
+      <div>
+        <p>지방자치는 헌법이 직접 보장하는 매우 중요한 제도입니다. 그러나 지역 소멸 위기와 인구의 수도권 집중으로 인한 당면 과제에 대응하기에는 명백한 한계가 있습니다.</p>
+        <p>좋은법연구소는 그 원인을 <strong>현행 법과 제도가 '좋은법'이 아니라는 점</strong>에서 찾고자 합니다. 법은 대학 교재나 법전 속에 박제되어 있을 때가 아니라, 주민이 살아가는 삶의 현장에서 작동할 때 비로소 생명력을 얻게 됩니다.</p>
+        <p>좋은법연구소가 지향하는 바는 <strong>'사람을 위한 실천적 법학'</strong>입니다. 법은 급변하는 시대상을 과감하게 수용하고 사람을 향해 움직여야 하며, 지역 주민의 삶이 궁극적이고 직접적인 목적이어야 합니다.</p>
+        <p>우리는 학술적 완결성만을 위한 연구, 서양의 제도를 무비판적으로 도입하기 위한 연구를 거부합니다. 21세기 대한민국의 현실에서 출발해 <strong>우리 지역 주민들의 삶을 실제로 바꿀 수 있는 대안</strong>을 찾고자 합니다.</p>
+        <p>좋은법연구소가 제안하는 모든 연구는 날 것 그대로의 현실을 바라보고, 법이라는 렌즈로 분석하고 진단하여 대안을 제시합니다.</p>
+        <p>그래서 좋은법연구소는 대한민국의 지방자치 현실에 갈증을 느끼는 모든 사람의 방문을 환영합니다. 지방자치단체 공무원, 지방자치단체장과 지방의회 구성원, 각종 관련 공공기관, 많은 동료 연구자 그리고 자기 지역의 미래를 걱정하는 주민까지 — <strong>위기의식을 가지고 대안을 찾고자 하는 모든 분</strong>과 함께 하고자 합니다.</p>
+      </div>
+      <div class="profile-card">
+        <div class="profile-photo">
+          <span class="ph-fallback">이</span>
+          <img src="profile.jpg" alt="이지은 연구소장" onerror="this.remove()">
+        </div>
+        <h3>이지은</h3>
+        <div class="role">연구소장 · 법학박사(행정법, 지방자치, 지방재정법)</div>
+        <div class="list-label">학력</div>
+        <ul>
+          <li>경희대학교 법학과(법학사)</li>
+          <li>경희대학교 대학원(법학석사) — 행정법 전공</li>
+          <li>경희대학교 법전원(법학전문박사) — 행정법 전공</li>
+        </ul>
+        <div class="list-label">주요 경력</div>
+        <ul>
+          <li>前 한국지방세연구원 연구위원</li>
+          <li>前 고려대학교 정책대학원 겸임교수</li>
+          <li>前 행정안전부 자문위원회 위원('22), 경기도자치분권협의회 위원('23)</li>
+          <li>前 인천광역시 지방보조금 심의위원회 위원('23)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="agenda">
+  <div class="section-inner">
+    <div class="section-label">Agenda</div>
+    <h2>2026 핵심 어젠다</h2>
+    <div class="agenda-grid">
+      <div class="agenda-card">
+        <div class="q">AGENDA 01</div>
+        <h3>국가재정과 지방재정의 시소게임</h3>
+        <p>중앙과 지방 사이에서 재원과 부담이 오가는 구조를 진단하고, 기울어진 시소의 균형점을 찾는 재정법적 대안을 모색합니다.</p>
+        <a class="agenda-more" href="agenda01.html">전문 읽기 →</a>
+      </div>
+      <div class="agenda-card">
+        <div class="q">AGENDA 02</div>
+        <h3>보충성 원칙의 함정</h3>
+        <p>지방자치의 이념적 기초인 보충성 원칙이 실제 법제와 재정 배분에서 어떻게 왜곡되어 작동하는지 검토합니다.</p>
+        <a class="agenda-more" href="agenda02.html">전문 읽기 →</a>
+      </div>
+      <div class="agenda-card">
+        <div class="q">AGENDA 03</div>
+        <h3>지역균형발전과 메가프로젝트</h3>
+        <p>대규모 개발 사업이 지역균형발전에 실제로 기여하는지, 법과 재정의 관점에서 그 실효성을 따져봅니다.</p>
+        <a class="agenda-more" href="agenda03.html">전문 읽기 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="notes">
+  <div class="section-inner">
+    <div class="section-label">Local Issue Notes</div>
+    <h2>지방 현안 노트</h2>
+    <p class="section-lead">지금 뉴스에 오르내리는 지방의 현안, 또는 이달의 지방자치단체를 골라 자치·재정 문제를 짧게 검토합니다. 무겁지 않게, 그러나 법적 쟁점은 정확하게.</p>
+    <div class="note-grid">
+      <div class="note-card">
+        <div class="note-meta">
+          <span class="region">경남 ○○시</span><span class="topic">재정</span>
+          <span class="date">2026. 6. 24.</span>
+        </div>
+        <h3>[예시] 재정위기 단체 지정 논란, 무엇이 문제인가</h3>
+        <p>지방재정법상 재정위기 단체 지정 요건과 절차를 짚고, 지정이 지역 주민에게 실제로 어떤 영향을 미치는지 검토합니다.</p>
+        <a class="more" href="#">전문 읽기 →</a>
+      </div>
+      <div class="note-card">
+        <div class="note-meta">
+          <span class="region">전북 ○○군</span><span class="topic">자치</span>
+          <span class="date">2026. 6. 10.</span>
+        </div>
+        <h3>[예시] 행정통합 논의, 주민 의사는 어디에 있는가</h3>
+        <p>인구감소지역 통합 논의에서 주민투표법과 지방자치법이 정한 주민 참여 절차가 실제로 작동하고 있는지 살펴봅니다.</p>
+        <a class="more" href="#">전문 읽기 →</a>
+      </div>
+      <div class="note-card">
+        <div class="note-meta">
+          <span class="region">○○도</span><span class="topic">조례</span>
+          <span class="date">2026. 5. 28.</span>
+        </div>
+        <h3>[예시] 청년수당 조례, 상위법과 충돌하는가</h3>
+        <p>지자체 현금성 복지 조례를 둘러싼 법령 위반 논란의 법적 구조를 정리하고, 자치입법권의 한계선을 검토합니다.</p>
+        <a class="more" href="#">전문 읽기 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reports">
+  <div class="section-inner">
+    <div class="section-label">Reports & Publications</div>
+    <h2>대안 리포트 · 저작물</h2>
+    <p class="section-lead">모든 리포트는 문제 → 진단 → 대안의 구조를 따릅니다. 학술 저작물 원문도 함께 공개합니다.</p>
+    <div class="pub-list">
+      <div class="pub-item">
+        <div class="meta">
+          <span class="type alt">대안 리포트</span><span class="type">AGENDA 01</span>
+          <h3>국가재정과 지방재정의 시소게임</h3>
+          <div class="info">좋은법연구소 대안 리포트 2026-01</div>
+        </div>
+        <span class="status soon-strong">곧 공개</span>
+      </div>
+      <div class="pub-item">
+        <div class="meta">
+          <span class="type alt">대안 리포트</span><span class="type">AGENDA 02</span>
+          <h3>보충성 원칙의 함정</h3>
+          <div class="info">좋은법연구소 대안 리포트 2026-02</div>
+        </div>
+        <span class="status">준비중</span>
+      </div>
+      <div class="pub-item">
+        <div class="meta">
+          <span class="type alt">대안 리포트</span><span class="type">AGENDA 03</span>
+          <h3>지역균형발전과 메가프로젝트</h3>
+          <div class="info">좋은법연구소 대안 리포트 2026-03</div>
+        </div>
+        <span class="status">준비중</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="data">
+  <div class="section-inner">
+    <div class="section-label">Data</div>
+    <h2>데이터 진단</h2>
+    <p class="section-lead">2026 핵심 어젠다 01 <a href="agenda01.html" style="color:var(--navy);font-weight:600;">「국가재정과 지방재정의 시소게임」</a>을 뒷받침하는 기초 자료입니다. 국세와 지방세의 격차, 그리고 내국세에 연동되어 해마다 출렁이는 이전재원의 구조를 공식 통계로 확인할 수 있습니다. 차트 위에 마우스를 올리면 연도별 수치가 표시됩니다.</p>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <h3>국세와 지방세 추이</h3>
+        <div class="src">출처: e-나라지표 「국세 및 지방세 비중」(기획재정부), 지방세통계연감 · 단위: 조 원 · 2024년은 잠정치</div>
+        <div class="chart-wrap"><canvas id="taxChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>국민 1인당 국세·지방세 부담액</h3>
+        <div class="src">각 연도 징수실적 ÷ 주민등록인구로 산출 · 단위: 만 원</div>
+        <div class="chart-wrap"><canvas id="perCapitaChart"></canvas></div>
+      </div>
+      <div class="chart-card" style="grid-column: 1 / -1;">
+        <h3>중앙에서 지방으로 — 정률분 지방교부세와 지방교육재정교부금 추이</h3>
+        <div class="src">출처: 행정안전부 「지방교부세 산정해설」, 교육부 · 당초예산 기준 · 정률분 지방교부세 = 보통교부세(내국세 19.24%의 97%) + 특별교부세(3%) · 지방교육재정교부금 = 내국세의 20.79% + 교육세 수입액 중 일부 · 단위: 조 원</div>
+        <div class="chart-wrap"><canvas id="transferChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="director-note">
+  <div class="section-inner">
+    <div class="section-label">Director's Note</div>
+    <h2>소장 노트</h2>
+    <p class="section-lead">연구소를 만들고 꾸려가는 과정, 그리고 대학 밖에서 연구자로 살아가는 일에 대한 짧은 기록입니다.</p>
+    <div class="diary-list">
+      <div class="diary-item">
+        <div class="d-date">2026. 6. 30.</div>
+        <h3>[예시] 연구소를 등록하던 날</h3>
+        <p>사업자등록증에 찍힌 "좋은법연구소"라는 글자를 보며, 기관이 된다는 것의 무게에 대해 생각했다.</p>
+        <a href="#">읽기 →</a>
+      </div>
+      <div class="diary-item">
+        <div class="d-date">2026. 6. 12.</div>
+        <h3>[예시] 첫 홈페이지를 만들며</h3>
+        <p>연구자가 도구를 직접 배우는 일은 낭비가 아니라, 연구의 독립이 어디까지를 뜻하는지 확인하는 과정이었다.</p>
+        <a href="#">읽기 →</a>
+      </div>
+      <div class="diary-item">
+        <div class="d-date">2026. 5. 30.</div>
+        <h3>[예시] 왜 대학 밖에서 연구하는가</h3>
+        <p>독립연구라는 실험이 지방 연구자의 구조적 조건과 어떻게 닿아 있는지, 스스로에게 답해보았다.</p>
+        <a href="#">읽기 →</a>
+      </div>
+    </div>
+    <p class="diary-disclaimer">※ 이 코너의 글은 연구소의 공식 견해가 아닌 소장 개인의 기록입니다.</p>
+  </div>
+</section>
+
+<section id="your-goodlaw">
+  <div class="section-inner">
+    <div class="section-label">Your Good Law</div>
+    <h2>당신이 생각하는 '좋은법'은 무엇인가요?</h2>
+    <p class="section-lead">좋은법은 연구실이 아니라 살아가는 사람들의 감각 속에 있다고 믿습니다. 방문하신 인사를 겸해, 당신의 '좋은법'을 한 문장으로 남겨주세요. 보내주신 글은 선별하여 이 벽에 게시합니다.</p>
+
+    <div class="wall-grid">
+      <div class="wall-card">
+        <div class="qm">“</div>
+        <p>군림하는 법이 아닌, 변화를 읽고 사람을 받드는 법. 그것이 제가 이 연구소를 시작한 이유입니다.</p>
+        <div class="who">이지은 · 좋은법연구소 소장</div>
+      </div>
+      <div class="wall-card invite">
+        이 자리는 당신의 문장을 기다리고 있습니다
+      </div>
+      <div class="wall-card invite">
+        이 자리는 당신의 문장을 기다리고 있습니다
+      </div>
+    </div>
+
+    <form class="wall-form" action="https://formspree.io/f/xwvgvqnz" method="POST">
+      <h3>나의 '좋은법' 남기기</h3>
+      <div class="form-note">보내주신 글은 소장이 직접 읽고, 선별하여 게시합니다. 게시를 원치 않으시면 글 끝에 "게시 사양"이라고 적어주세요.</div>
+      <label for="wf-message">나에게 좋은법이란 *</label>
+      <textarea id="wf-message" name="나의 좋은법" required placeholder="한 문장이어도, 긴 이야기여도 좋습니다."></textarea>
+      <label for="wf-name">이름 또는 별칭 (선택)</label>
+      <input id="wf-name" name="이름" type="text" placeholder="예: 이지은, 혹은 '○○동 주민'">
+      <label for="wf-from">지역 또는 소속 (선택)</label>
+      <input id="wf-from" name="지역소속" type="text" placeholder="예: 인천, ○○군청, 대학원생">
+      <button type="submit">좋은법 보내기</button>
+      <div class="privacy">이메일 주소는 수집하지 않으며, 남겨주신 내용은 게시 목적 외에 사용하지 않습니다.</div>
+    </form>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Contact</div>
+    <h2>연락처 · 협업 제안</h2>
+    <div class="contact-card wide">
+      <a class="contact-mail" href="mailto:contact@goodlaw.re.kr">contact@goodlaw.re.kr</a>
+      <p>자치·재정 법제 자문, 연구용역, 강연 의뢰와 현장의 문제 제보·협업 제안은 이메일로 보내주세요. 지역의 위기 사례가 연구소의 다음 어젠다가 됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div style="display:flex;align-items:center;gap:10px;"><svg width="26" height="18" viewBox="0 0 130 88" aria-hidden="true"><path d="M22 24 Q43 10 65 24 T108 24" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/><circle cx="43" cy="6" r="7" fill="#ffffff"/><circle cx="65" cy="11" r="9" fill="#d9bd8d"/><circle cx="87" cy="6" r="7" fill="#ffffff"/><path d="M40 42 L40 76 L90 76 L90 42" fill="none" stroke="#d9bd8d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 58 L90 58" stroke="#d9bd8d" stroke-width="8" stroke-linecap="round"/></svg><span>© 2026 <span class="brand-gold">좋은법</span>연구소<span class="brand-sub">자치/재정</span> All rights reserved.</span></div>
+    <div>본 사이트의 저작물은 출처 표시 조건으로 자유롭게 인용할 수 있습니다.</div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(){ document.querySelector('.nav-links').classList.remove('open'); });
+  });
+  const navy = '#1a2f4b', accent = '#b08d57', alert = '#a44a3f';
+  Chart.defaults.font.family = "'Noto Sans KR', sans-serif";
+
+  const YEARS = ['2019', '2020', '2021', '2022', '2023', '2024'];
+  const NATL = [293.5, 285.5, 344.1, 395.9, 344.1, 336.5];   // 국세 (조 원)
+  const LOCAL = [90.5, 102.0, 112.8, 118.6, 112.5, 114.0];   // 지방세 (조 원)
+  const POP = [5184.9, 5182.9, 5163.9, 5143.9, 5132.5, 5121.8]; // 주민등록인구 (만 명)
+
+  new Chart(document.getElementById('taxChart'), {
+    type: 'bar',
+    data: {
+      labels: YEARS,
+      datasets: [
+        { label: '국세', data: NATL, backgroundColor: navy, borderRadius: 3 },
+        { label: '지방세', data: LOCAL, backgroundColor: accent, borderRadius: 3 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' } },
+      scales: { y: { title: { display: true, text: '조 원' } } }
+    }
+  });
+
+  const GRANT = [49.0, 48.0, 45.9, 56.8, 68.7, 61.8];
+  const EDU = [55.2, 55.4, 53.2, 65.1, 75.8, 68.9];
+  const TOTAL = GRANT.map((v,i)=>Math.round((v+EDU[i])*10)/10);
+  new Chart(document.getElementById('transferChart'), {
+    type: 'line',
+    data: {
+      labels: YEARS,
+      datasets: [
+        { label: '합계', data: TOTAL,
+          borderColor: alert, backgroundColor: alert, borderWidth: 3,
+          borderDash: [7, 5], tension: .25, pointRadius: 4 },
+        { label: '정률분 지방교부세(보통+특별)', data: GRANT,
+          borderColor: navy, backgroundColor: navy, tension: .25, pointRadius: 4 },
+        { label: '지방교육재정교부금', data: EDU,
+          borderColor: accent, backgroundColor: accent, tension: .25, pointRadius: 4 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' } },
+      scales: { y: { title: { display: true, text: '조 원' } } }
+    }
+  });
+
+  new Chart(document.getElementById('perCapitaChart'), {
+    type: 'bar',
+    data: {
+      labels: YEARS,
+      datasets: [
+        { label: '1인당 국세', data: NATL.map((v,i)=>Math.round(v*10000/POP[i])), backgroundColor: navy, borderRadius: 3 },
+        { label: '1인당 지방세', data: LOCAL.map((v,i)=>Math.round(v*10000/POP[i])), backgroundColor: accent, borderRadius: 3 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' } },
+      scales: { y: { title: { display: true, text: '만 원' } } }
+    }
+  });
+});
+</script>
+
+</body>
+</html>

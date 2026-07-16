@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>보충성 원칙의 함정 | 좋은법연구소</title>
+<meta name="description" content="좋은법연구소 2026 핵심 어젠다 02 — 보충성 원칙의 함정, 독일산 외제 면허증의 오류">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="좋은법연구소">
+<meta property="og:title" content="보충성 원칙의 함정">
+<meta property="og:description" content="독일산 외제 면허증의 오류 — 좋은법연구소 2026 핵심 어젠다 02">
+<meta property="og:url" content="https://goodlaw.re.kr/agenda02.html">
+<meta property="og:image" content="https://goodlaw.re.kr/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 88"><path d="M22 24 Q43 10 65 24 T108 24" fill="none" stroke="%231a2f4b" stroke-width="8" stroke-linecap="round"/><circle cx="43" cy="6" r="7" fill="%231a2f4b"/><circle cx="65" cy="11" r="9" fill="%23b08d57"/><circle cx="87" cy="6" r="7" fill="%23b08d57"/><path d="M40 42 L40 76 L90 76 L90 42" fill="none" stroke="%23b08d57" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 58 L90 58" stroke="%23b08d57" stroke-width="8" stroke-linecap="round"/></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2f4b; --navy-light: #2c4a73; --accent: #b08d57; --alert: #a44a3f;
+    --gold-l: #d9bd8d; --bg: #fdfcfa; --bg-alt: #f4f1ec;
+    --text: #2b2b2b; --text-muted: #6b6b6b; --border: #e3ded6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans KR', sans-serif; color: var(--text); background: var(--bg); line-height: 1.85; }
+  h1, h2, h3 { font-family: 'Noto Serif KR', serif; color: var(--navy); }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(253,252,250,.95); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1040px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between; height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 1.05rem;
+    color: var(--navy); text-decoration: none; letter-spacing: .02em;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .brand-gold { color: #9a7a48; }
+  .brand-sub {
+    display: inline-block; transform: translateY(-.28em);
+    font-size: .55em; color: var(--accent); font-weight: 500;
+    letter-spacing: .03em; margin-left: .35em;
+  }
+  .back { font-size: .9rem; color: var(--text-muted); text-decoration: none; }
+  .back:hover { color: var(--navy); }
+
+  header.article-head { background: var(--navy); color: #fff; padding: 72px 24px 60px; }
+  .head-inner { max-width: 760px; margin: 0 auto; }
+  .agenda-tag {
+    display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .15em;
+    color: var(--gold-l); border: 1px solid rgba(217,189,141,.5);
+    border-radius: 3px; padding: 4px 12px; margin-bottom: 20px;
+  }
+  .article-head h1 { color: #fff; font-size: clamp(1.5rem, 3.4vw, 2.2rem); line-height: 1.45; margin-bottom: 14px; }
+  .article-head .subtitle { color: var(--gold-l); font-size: 1.05rem; font-weight: 500; }
+  .article-head .meta { margin-top: 26px; font-size: .85rem; color: #9fb0c5; }
+
+  main { max-width: 760px; margin: 0 auto; padding: 64px 24px 40px; }
+  main p { margin-bottom: 26px; font-size: 1.02rem; color: #3a3a3a; }
+  main h2 {
+    font-size: 1.3rem; margin: 52px 0 22px; line-height: 1.5;
+  }
+  main h2 .label {
+    display: block; font-family: 'Noto Sans KR', sans-serif; font-size: .75rem;
+    font-weight: 700; letter-spacing: .15em; color: var(--accent); margin-bottom: 6px;
+  }
+  .lede {
+    background: var(--bg-alt); border-radius: 8px; padding: 28px 30px; margin-bottom: 40px;
+  }
+  .lede p { margin-bottom: 16px; font-size: .98rem; }
+  .lede p:last-child { margin-bottom: 0; }
+  .closing {
+    border-top: 1px solid var(--border); margin-top: 48px; padding-top: 32px;
+  }
+  .closing p { font-family: 'Noto Serif KR', serif; font-weight: 600; color: var(--navy); font-size: 1.05rem; }
+  .closing p em { font-style: normal; color: #9a7a48; }
+
+  .report-cta {
+    margin-top: 56px; background: var(--navy); border-radius: 10px;
+    padding: 34px 36px; display: flex; align-items: center;
+    justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  }
+  .report-cta .cta-text h3 { color: #fff; font-size: 1.12rem; margin-bottom: 6px; }
+  .report-cta .cta-text p { color: #cdd6e2; font-size: .88rem; margin: 0; }
+  .report-cta a.cta-btn {
+    flex-shrink: 0; display: inline-block; padding: 13px 28px; border-radius: 4px;
+    background: var(--accent); color: #fff; text-decoration: none;
+    font-weight: 600; font-size: .95rem; transition: background .2s;
+  }
+  .report-cta a.cta-btn:hover { background: #9a7a48; }
+
+  .article-footer {
+    max-width: 760px; margin: 0 auto; padding: 0 24px 72px;
+    font-size: .82rem; color: var(--text-muted);
+  }
+  .article-footer .license { border-top: 1px dashed var(--border); padding-top: 18px; }
+
+  footer { background: var(--navy); color: #9fb0c5; padding: 36px 24px; font-size: .82rem; }
+  .footer-inner { max-width: 1040px; margin: 0 auto; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><svg width="32" height="22" viewBox="0 0 130 88" aria-hidden="true"><path d="M22 24 Q43 10 65 24 T108 24" fill="none" stroke="#1a2f4b" stroke-width="8" stroke-linecap="round"/><circle cx="43" cy="6" r="7" fill="#1a2f4b"/><circle cx="65" cy="11" r="9" fill="#b08d57"/><circle cx="87" cy="6" r="7" fill="#1a2f4b"/><path d="M40 42 L40 76 L90 76 L90 42" fill="none" stroke="#b08d57" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 58 L90 58" stroke="#b08d57" stroke-width="8" stroke-linecap="round"/></svg><span><span class="brand-gold">좋은법</span>연구소<span class="brand-sub">자치/재정</span></span></a>
+    <a class="back" href="index.html#agenda">← 핵심 어젠다로 돌아가기</a>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="head-inner">
+    <span class="agenda-tag">2026 핵심 어젠다 02</span>
+    <h1>보충성 원칙의 함정</h1>
+    <div class="subtitle">독일산(産) 외제 면허증의 오류</div>
+    <div class="meta">좋은법연구소 · 이지은 소장 · 법학박사 | 2026. 7.</div>
+  </div>
+</header>
+
+<main>
+  <div class="lede">
+    <p>독일의 정밀한 아우토반을 달리기 위해 발급된 최신 운전면허증이 있습니다. 이 면허증을 가진 운전자가 대한민국 지방의 좁고 가파른 골목길, 혹은 꽉 막힌 출퇴근길 도심에 들어섰습니다. 과연 이 면허증과 독일식 운전법이 대한민국 도로 위에서도 안전하게 통할 수 있을까요?</p>
+  </div>
+
+  <p>국내에서 지방자치를 담당하는 많은 사람들이 금과옥조처럼 여기는 '보충성 원칙'이 바로 이 독일산 면허증과 같습니다. 기초지방자치단체가 할 수 있는 일은 기초가, 안 되는 것은 광역이, 그것도 안 되는 것만 중앙정부가 보충적으로 해야 한다는 이 우아하기 짝이 없는 이론은 독일의 강력한 연방제와 두터운 지방재정이라는 '아우토반' 위에서 탄생한 법이론입니다.</p>
+
+  <h2><span class="label">STEP 1 · PERCEPTION</span>현실인식: 아우토반의 이론을 한국의 골목길에 들이밀다</h2>
+  <p>독일에서 통했다고 대한민국에서 통하리라는 법은 없습니다. 오늘날 대한민국의 지방은 인구 소멸과 세수 결손이라는 거대한 낭떠러지 앞에 서 있습니다. 자립할 최소한의 기초 체력(재정과 인력)조차 없는 기초지방자치단체에게 "보충성 원칙에 따라 스스로 먼저 해결하라"고 요구하거나 이를 위해 권한 확대에만 집중하는 것은 엔진이 고장 난 경차를 부추겨 가파른 오르막길을 혼자 올라가라는 것과 다름없습니다.</p>
+  <p>이 원칙은 도그마가 되어 중앙정부에는 책임을 회피할 좋은 명분을 주고, 지방정부에는 감당할 수 없는 의무만 떠넘기는 '책임 전가의 덫'으로 변질되었습니다.</p>
+
+  <h2><span class="label">QUESTION</span>질문: 21세기 대한민국에 맞는 한국형 자치분권은 무엇인가</h2>
+  <p>서양의 제도를 이식하는 데 몰두해 온 기성 법학은 이 거대한 모순을 외면해 왔습니다. 현행법이 보장하는 분권의 방식이 오히려 지역을 고사시키고 있다면, 그 법과 제도는 결코 '좋은법'이 아닙니다.</p>
+
+  <p>좋은법연구소는 교과서 속 독일식 환상에서 벗어나, 날 것 그대로의 대한민국 지방 현실에 작동하는 <span style="color:#9a7a48;font-weight:600;">'현실적 보충성'</span>과 새로운 대안 입법 모델을 제시하고자 합니다.</p>
+
+  <div class="report-cta">
+    <div class="cta-text">
+      <h3>그래서, 무엇을 바꿔야 하는가</h3>
+      <p>이 어젠다에 대한 구체적인 진단과 제도 개선안은 대안 리포트에서 이어집니다.</p>
+    </div>
+    <a class="cta-btn" href="index.html#reports">대안 리포트 보기 →</a>
+  </div>
+</main>
+
+<div class="article-footer">
+  <div class="license">© 2026 이지은 · 좋은법연구소 | 이 글은 CC BY-ND 4.0에 따라 출처를 표시하면 자유롭게 이용할 수 있으며, 변경물의 배포는 허용되지 않습니다.</div>
+</div>
+
+<footer>
+  <div class="footer-inner">© 2026 <span style="color:#d9bd8d;">좋은법</span>연구소 <span style="font-size:.85em;color:#b08d57;">자치/재정</span> All rights reserved.</div>
+</footer>
+
+</body>
+</html>
