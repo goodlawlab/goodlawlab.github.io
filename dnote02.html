@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>첫 홈페이지를 만들며 | 소장 노트 | 좋은법연구소</title>
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 88"><path d="M22 24 Q43 10 65 24 T108 24" fill="none" stroke="%231a2f4b" stroke-width="8" stroke-linecap="round"/><circle cx="43" cy="6" r="7" fill="%231a2f4b"/><circle cx="65" cy="11" r="9" fill="%23b08d57"/><circle cx="87" cy="6" r="7" fill="%231a2f4b"/><path d="M40 42 L40 76 L90 76 L90 42" fill="none" stroke="%23b08d57" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 58 L90 58" stroke="%23b08d57" stroke-width="8" stroke-linecap="round"/></svg>'>
+<meta name="description" content="좋은법연구소 소장 노트 02 — 연구 철학을 담는 그릇을 남의 손에 맡기고 싶지 않아 홈페이지를 직접 만들었다. 그 과정과 벅찬 마음에 대한 기록.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="좋은법연구소">
+<meta property="og:title" content="첫 홈페이지를 만들며 | 소장 노트">
+<meta property="og:description" content="월급이 나오는 것도 아닌데, 밤잠을 설칠 만큼 행복하다. 이 공간을 잘 가꿔 보고 싶다는 생각을 하루에도 수십 번씩 한다.">
+<meta property="og:url" content="https://goodlaw.re.kr/dnote02.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2f4b;
+    --navy-light: #2c4a73;
+    --accent: #b08d57;
+    --alert: #a44a3f;
+    --bg: #fdfcfa;
+    --bg-alt: #f4f1ec;
+    --text: #2b2b2b;
+    --text-muted: #6b6b6b;
+    --border: #e3ded6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+  }
+  h1, h2, h3 { font-family: 'Noto Serif KR', serif; color: var(--navy); }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(253,252,250,.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1040px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Noto Serif KR', serif; font-weight: 700;
+    font-size: 1.05rem; color: var(--navy); text-decoration: none;
+    letter-spacing: .02em;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .nav-logo svg { display: block; }
+  .brand-sub {
+    display: inline-block; transform: translateY(-.28em);
+    font-size: .55em; color: var(--accent); font-weight: 500;
+    letter-spacing: .03em; margin-left: .35em;
+  }
+  .brand-gold { color: #9a7a48; }
+  footer .brand-gold { color: #d9bd8d; }
+  .nav-links { display: flex; gap: 22px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--text-muted);
+    font-size: .92rem; font-weight: 500; transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--navy); }
+
+  .article-head {
+    background: var(--bg-alt);
+    border-bottom: 1px solid var(--border);
+    padding: 64px 24px 48px;
+  }
+  .article-head-inner { max-width: 720px; margin: 0 auto; }
+  .note-label {
+    font-size: .8rem; font-weight: 700; letter-spacing: .18em;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 14px;
+  }
+  .article-head .d-date { font-size: .85rem; color: var(--text-muted); margin-bottom: 10px; }
+  .article-head h1 { font-size: clamp(1.5rem, 3.2vw, 2rem); line-height: 1.45; }
+
+  main { max-width: 720px; margin: 0 auto; padding: 56px 24px 40px; }
+  main p {
+    font-size: .98rem; color: #3a3a3a; line-height: 1.95;
+    margin-bottom: 26px;
+  }
+  .pull {
+    font-family: 'Noto Serif KR', serif;
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 20px; margin: 36px 0;
+    font-size: 1.08rem; color: var(--navy); line-height: 1.8;
+  }
+  .diary-disclaimer {
+    font-size: .78rem; color: var(--text-muted);
+    border-top: 1px dashed var(--border); padding-top: 18px; margin-top: 48px;
+  }
+
+  .note-nav {
+    max-width: 720px; margin: 0 auto; padding: 0 24px 72px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .note-nav a {
+    text-decoration: none; font-size: .9rem; font-weight: 500; color: var(--navy);
+  }
+  .note-nav a:hover { color: var(--accent); }
+  .note-nav .hint { font-size: .76rem; color: var(--text-muted); margin-right: 8px; }
+
+  footer {
+    background: var(--navy); color: #9fb0c5;
+    padding: 36px 24px; font-size: .82rem;
+  }
+  .footer-inner { max-width: 1040px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer .brand-sub { color: #d9bd8d; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><svg width="32" height="22" viewBox="0 0 130 88" aria-hidden="true"><path d="M22 24 Q43 10 65 24 T108 24" fill="none" stroke="#1a2f4b" stroke-width="8" stroke-linecap="round"/><circle cx="43" cy="6" r="7" fill="#1a2f4b"/><circle cx="65" cy="11" r="9" fill="#b08d57"/><circle cx="87" cy="6" r="7" fill="#1a2f4b"/><path d="M40 42 L40 76 L90 76 L90 42" fill="none" stroke="#b08d57" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 58 L90 58" stroke="#b08d57" stroke-width="8" stroke-linecap="round"/></svg><span><span class="brand-gold">좋은법</span>연구소<span class="brand-sub">자치/재정</span></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#director-note">소장 노트</a></li>
+      <li><a href="index.html">홈</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="article-head-inner">
+    <div class="note-label">Director's Note · 소장 노트 02</div>
+    <div class="d-date">2026. 7. 23.</div>
+    <h1>첫 홈페이지를 만들며</h1>
+  </div>
+</header>
+
+<main>
+  <p>연구소 홈페이지를 외주 없이 직접 만들었다. 물론 클로드라는 AI의 도움을 많이 받았다. 비용을 아끼려는 마음도 없지 않았다. 그러나 가장 큰 이유는 따로 있다. 나만의 연구 철학이 화면의 구조와 문장, 색 하나에까지 그대로 배어들기를 바랐기 때문이다. 이 홈페이지는 연구소의 간판이기 이전에, 앞으로 내 연구가 차곡차곡 쌓여 갈 아카이브다. 연구소가 무엇을 묻고 어떤 순서로 답해 가는지가 이 공간의 뼈대가 될 텐데, 그 뼈대를 세우는 일을 남의 손에 맡기고 싶지 않았다.</p>
+
+  <p>가장 공을 들인 것은 로고였다. 연구 철학을 작은 이미지 하나로 표현할 수 있어야 했기 때문이다. 여러 추천 이미지를 받아 두고 고르고, 지우고, 다시 다듬기를 반복했다. 로고 가운데 물결 표시는 변화하는 세상을 의미하고, 상단의 작은 동그라미 세 개는 사람을 의미한다. 하단의 ㅂ은 짐작하겠지만 '법'을 의미한다. 내가 생각하는 '법학이 가야 할 길'을 형상화했다. 누군가에게는 그저 장식으로 보이겠지만, 나에게는 좋은법연구소가 가려는 길을 요약한 한 문장과 같다.</p>
+
+  <p>뜻밖에 가장 오래 붙들었던 고민은 이 '소장 노트'를 홈페이지에 넣을지 여부였다. 소장 노트는 연구소의 공식 문서가 아니라 내 개인의 기록이다. 서툰 판단과 흔들리는 마음, 어쩌면 나의 치부까지 드러나게 될지도 모른다. 그럼에도 공개하기로 마음먹은 것은, 내가 가는 이 길이 누군가에게는 이정표가 될 수도 있겠다는 생각 때문이다. 기관 밖에서 연구자로 살아보려는 사람에게, 앞서 걷는 사람의 기록은 그 자체로 하나의 지도가 된다.</p>
+
+  <div class="pull">내가 가는 이 길이, 누군가에게는 이정표가 될 수도 있을 것이다.</div>
+
+  <p>공개할 수 있는 수준의 홈페이지가 완성된 지금, 심정은 말할 수 없이 벅차다. 기관에 소속되어 있을 때는 일이 많은 것이 늘 스트레스였다. 지금은 월급이 나오는 것도 아닌데, 밤잠을 설칠 만큼 행복하다. 스스로 도파민 과다 분비가 아닌가 싶을 때도 있다. 이 공간을 잘 가꿔 보고 싶다는 생각을 하루에도 수십 번씩 한다.</p>
+
+  <p>첫 화면에 걸어 둔 문장처럼, 책 속에 멈춰 서 있는 조문이 아니라 현실에서 실천되는 법을 찾는 일이 이곳에서 시작된다. 이 홈페이지는 그 출발선이다.</p>
+
+  <p class="diary-disclaimer">※ 이 글은 연구소의 공식 견해가 아닌 소장 개인의 기록입니다.</p>
+</main>
+
+<div class="note-nav">
+  <a href="dnote01.html"><span class="hint">이전 글</span>← 왜 독립연구를 선택했는가</a>
+  <a href="index.html#director-note">← 소장 노트 목록으로</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div style="display:flex;align-items:center;gap:10px;"><svg width="26" height="18" viewBox="0 0 130 88" aria-hidden="true"><path d="M22 24 Q43 10 65 24 T108 24" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/><circle cx="43" cy="6" r="7" fill="#ffffff"/><circle cx="65" cy="11" r="9" fill="#d9bd8d"/><circle cx="87" cy="6" r="7" fill="#ffffff"/><path d="M40 42 L40 76 L90 76 L90 42" fill="none" stroke="#d9bd8d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 58 L90 58" stroke="#d9bd8d" stroke-width="8" stroke-linecap="round"/></svg><span>© 2026 <span class="brand-gold">좋은법</span>연구소<span class="brand-sub">자치/재정</span> All rights reserved.</span></div>
+    <div>본 사이트의 저작물은 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" style="color:#d9bd8d;text-decoration:none;">CC BY-NC-ND 4.0</a>에 따라 출처를 표시하면 자유롭게 공유할 수 있으나, 영리 목적 이용과 변경은 허용되지 않습니다.</div>
+  </div>
+</footer>
+
+</body>
+</html>

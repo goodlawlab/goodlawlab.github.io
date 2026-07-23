@@ -233,6 +233,7 @@
     background: #fff; border: 1px solid var(--border); border-radius: 8px;
     padding: 28px 26px; transition: transform .2s, box-shadow .2s;
     border-top: 4px solid var(--alert);
+    display: flex; flex-direction: column;
   }
   .agenda-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(26,47,75,.08); }
   .agenda-card .q {
@@ -240,8 +241,8 @@
     letter-spacing: .08em; margin-bottom: 8px;
   }
   .agenda-card .agenda-more {
-    display: inline-block; margin-top: 14px; font-size: .84rem; font-weight: 600;
-    color: var(--navy); text-decoration: none;
+    display: inline-block; margin-top: auto; padding-top: 14px; font-size: .84rem; font-weight: 600;
+    color: var(--navy); text-decoration: none; align-self: flex-start;
   }
   .agenda-card .agenda-more:hover { color: var(--accent); }
   .agenda-card h3 { font-size: 1.12rem; margin-bottom: 10px; line-height: 1.5; }
@@ -544,10 +545,10 @@
 
     <!-- 1. 상위 대주제 (공동 기획 세션) -->
     <div class="main-series-box" style="background: var(--bg-alt); border: 1px solid var(--border); border-left: 5px solid var(--alert); padding: 32px; border-radius: 8px; margin-bottom: 40px; margin-top: 20px;">
-      <span style="font-size: .8rem; font-weight: 700; color: var(--alert); letter-spacing: .1em; display: block; margin-bottom: 8px;">[기획 연재 제1호 · 경기편 공개 | 인천·충북편 7월 24일 공개]</span>
+      <span style="font-size: .8rem; font-weight: 700; color: var(--alert); letter-spacing: .1em; display: block; margin-bottom: 8px;">[기획 연재 제1호 · 경기·인천편 공개 | 충북편 7월 26일 공개]</span>
       <h3 style="font-size: 1.4rem; margin-bottom: 12px; font-family: 'Noto Serif KR', serif;">6.3 지방선거와 지방재정위기설의 실상</h3>
       <p style="color: #444; font-size: .95rem; line-height: 1.7; max-width: 850px; margin: 0;">
-        정권이 바뀌자마자 지자체마다 쏟아져 나온 '재정 파탄' 선언. 단순히 전임 단체장의 방만한 사업들을 칼질하는 정치적 정쟁을 넘어, 지자체 비상금(통합재정안정화기금) 제도의 한계와 행정 체제 효율화의 근본적 부재를 세 지역의 구체적 데이터를 통해 정밀 진단합니다.
+        정권이 바뀌자마자 지자체마다 쏟아져 나온 '재정 파탄' 선언. 단순히 전임 단체장의 방만한 사업들을 칼질하는 정치적 정쟁을 넘어, 지자체 비상금(통합재정안정화기금) 제도의 한계와 행정 체제 효율화의 근본적 부재를 전국 광역자치단체의 구체적 데이터를 통해 정밀 진단합니다.
       </p>
     </div>
     <!-- 2. 하위 주제 (지역별 3대 현안 카드) -->
@@ -562,25 +563,25 @@
         </div>
         <h3 style="color: var(--text); font-size: 1.05rem;">[경기편] 7조 누적 채무와 감액 추경의 그늘</h3>
         <p style="color: var(--text-muted); font-size: .87rem;">부동산 세수 급감 속에서도 비상 기금을 끌어 쓰며 버텨온 경기도 재정의 한계를 짚고, 일시적인 사업 가위질을 넘어선 행정 전달체계 개편 필요성을 논합니다.</p>
-        <a class="more" href="note01_gyeonggi.pdf" target="_blank" rel="noopener" style="color: var(--alert); font-weight: 700;">본문 PDF 보기 →</a>
+        <a class="more" href="note01.html#gyeonggi" style="color: var(--alert); font-weight: 700;">본문 보러 가기 →</a>
       </div>
-      <!-- 인천편 -->
-      <div class="note-card" style="border: 2px dashed var(--border); background: rgba(253,252,250,0.6); box-shadow: none;">
+      <!-- 인천편 (공개) -->
+      <div class="note-card" style="border: 1px solid var(--border); border-top: 4px solid var(--alert); background: #fff;">
         <div class="note-meta">
           <span class="region" style="background: var(--navy);">인천시</span>
           <span class="topic" style="background: #fdfcfa; border: 1px solid var(--border); color: var(--navy);">기금</span>
-          <span class="date" style="color: var(--accent); font-weight: 600;">7. 24. 공개</span>
+          <span class="date" style="color: var(--alert); font-weight: 700;">공개</span>
         </div>
-        <h3 style="color: var(--text); font-size: 1.05rem;">[인천편] 5.5조 잠재적 재정 부담과 기금 고갈</h3>
-        <p style="color: var(--text-muted); font-size: .87rem;">'마이너스 통장'처럼 전락한 통합관리기금 운용 실태를 고발하고, 단체장의 정략적 판단에 휘둘리지 않는 독립적 재정 위험 통제 장치 법제화를 제안합니다.</p>
-        <a class="more" href="note01.html#incheon" style="color: var(--accent); font-weight: 600;">예고 보기 →</a>
+        <h3 style="color: var(--text); font-size: 1.05rem;">[인천편] 세수 반등의 실상과 특별회계 우회 차입</h3>
+        <p style="color: var(--text-muted); font-size: .87rem;">산업 연동형 구조로 전환된 인천 세입의 실상을 6개년 결산 데이터로 확인하고, 통합관리기금을 가교로 한 내부 차입 관행의 법적 통제 방안을 제안합니다.</p>
+        <a class="more" href="note01.html#incheon" style="color: var(--alert); font-weight: 700;">본문 보러 가기 →</a>
       </div>
       <!-- 충북편 -->
       <div class="note-card" style="border: 2px dashed var(--border); background: rgba(253,252,250,0.6); box-shadow: none;">
         <div class="note-meta">
           <span class="region" style="background: var(--navy);">충청북도</span>
           <span class="topic" style="background: #fdfcfa; border: 1px solid var(--border); color: var(--navy);">체제</span>
-          <span class="date" style="color: var(--accent); font-weight: 600;">7. 24. 공개</span>
+          <span class="date" style="color: var(--accent); font-weight: 600;">7. 26. 공개</span>
         </div>
         <h3 style="color: var(--text); font-size: 1.05rem;">[충북편] 부채 1조가 던진 화두: '사업 정리' vs '조직 혁신'</h3>
         <p style="color: var(--text-muted); font-size: .87rem;">충북도의 재정 정상화 선언이 보여주기식 유사 사업 정리를 넘어, 광역 단위에서 스스로 행정 조직과 일하는 방식을 슬림화하는 진짜 효율화로 나아갈 방향을 제시합니다.</p>
@@ -602,7 +603,7 @@
           <h3>국가재정과 지방재정의 시소게임</h3>
           <div class="info">좋은법연구소 대안 리포트 2026-01</div>
         </div>
-        <span class="status soon-strong">곧 공개</span>
+        <span class="status soon-strong">8월 공개</span>
       </div>
       <div class="pub-item">
         <div class="meta">
@@ -656,22 +657,16 @@
     <p class="section-lead">연구소를 만들고 꾸려가는 과정, 그리고 대학 밖에서 연구자로 살아가는 일에 대한 짧은 기록입니다.</p>
     <div class="diary-list">
       <div class="diary-item">
-        <div class="d-date">2026. 6. 30.</div>
-        <h3>[예시] 연구소를 등록하던 날</h3>
-        <p>사업자등록증에 찍힌 "좋은법연구소"라는 글자를 보며, 기관이 된다는 것의 무게에 대해 생각했다.</p>
-        <a href="#">읽기 →</a>
+        <div class="d-date">2026. 7. 23.</div>
+        <h3>첫 홈페이지를 만들며</h3>
+        <p>연구 철학을 담는 그릇을 남의 손에 맡기고 싶지 않았다. 월급이 나오는 것도 아닌데 밤잠을 설칠 만큼 행복한 요즘의 기록.</p>
+        <a href="dnote02.html">읽기 →</a>
       </div>
       <div class="diary-item">
-        <div class="d-date">2026. 6. 12.</div>
-        <h3>[예시] 첫 홈페이지를 만들며</h3>
-        <p>연구자가 도구를 직접 배우는 일은 낭비가 아니라, 연구의 독립이 어디까지를 뜻하는지 확인하는 과정이었다.</p>
-        <a href="#">읽기 →</a>
-      </div>
-      <div class="diary-item">
-        <div class="d-date">2026. 5. 30.</div>
-        <h3>[예시] 왜 대학 밖에서 연구하는가</h3>
-        <p>독립연구라는 실험이 지방 연구자의 구조적 조건과 어떻게 닿아 있는지, 스스로에게 답해보았다.</p>
-        <a href="#">읽기 →</a>
+        <div class="d-date">2026. 7. 15.</div>
+        <h3>왜 독립연구를 선택했는가</h3>
+        <p>기관에서는 끝내 주어지지 않았던 '연구에 실패할 자유'를 누리기 위해, 그리고 현실에서 작동하는 실천 가능한 법학을 위해 독립을 선택했다.</p>
+        <a href="dnote01.html">읽기 →</a>
       </div>
     </div>
     <p class="diary-disclaimer">※ 이 코너의 글은 연구소의 공식 견해가 아닌 소장 개인의 기록입니다.</p>
