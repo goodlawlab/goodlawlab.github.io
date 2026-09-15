@@ -68,10 +68,10 @@
   .brand-gold { color: #9a7a48; }
   footer .brand-gold, .hero .brand-gold { color: #d9bd8d; }
   .hero .brand-sub { color: #d9bd8d; }
-  .nav-links { display: flex; gap: 26px; list-style: none; }
+  .nav-links { display: flex; gap: 16px; list-style: none; }
   .nav-links a {
-    text-decoration: none; color: var(--text-muted);
-    font-size: .92rem; font-weight: 500; transition: color .2s;
+    text-decoration: none; color: var(--text-muted); white-space: nowrap;
+    font-size: .9rem; font-weight: 500; transition: color .2s;
   }
   .nav-links a:hover { color: var(--navy); }
   .nav-links .dropdown { position: relative; }
@@ -107,7 +107,7 @@
     display: none; background: none; border: none; cursor: pointer;
     font-size: 1.5rem; color: var(--navy); padding: 6px 10px; line-height: 1;
   }
-  @media (max-width: 700px) {
+  @media (max-width: 1080px) {
     .menu-toggle { display: block; }
     .nav-links {
       display: none; position: absolute; top: 64px; left: 0; right: 0;
@@ -432,6 +432,7 @@
       <li><a href="#agenda">핵심 어젠다</a></li>
       <li><a href="#notes">현안 노트</a></li>
       <li><a href="#reports">대안 리포트</a></li>
+      <li><a href="#lectures">교육·강연</a></li>
       <li><a href="#data">데이터 진단</a></li>
       <li><a href="#director-note">소장 노트</a></li>
       <li><a href="#your-goodlaw">당신의 좋은법</a></li>
@@ -509,6 +510,7 @@
           <li>前 행정안전부 자문위원회 위원('22), 경기도자치분권협의회 위원('23)</li>
           <li>前 인천광역시 지방보조금 심의위원회 위원('23)</li>
         </ul>
+        <div style="margin-top:16px;"><a href="profile.html" style="color:var(--navy);font-weight:600;font-size:.88rem;text-decoration:none;">소장 프로필 전체 보기 →</a></div>
       </div>
     </div>
   </div>
@@ -607,7 +609,7 @@
           <h3>국가재정과 지방재정의 시소게임</h3>
           <div class="info">좋은법연구소 대안 리포트 2026-01</div>
         </div>
-        <span class="status soon-strong">8월 공개</span>
+        <span class="status soon-strong">9월 공개</span>
       </div>
       <div class="pub-item">
         <div class="meta">
@@ -624,6 +626,24 @@
           <div class="info">좋은법연구소 대안 리포트 2026-03</div>
         </div>
         <span class="status">준비중</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lectures">
+  <div class="section-inner">
+    <div class="section-label">Education &amp; Lectures</div>
+    <h2>교육·강연</h2>
+    <p class="section-lead">지방의회·지방자치단체·교육기관을 대상으로 진행한 교육과 강연 가운데, 공개 가능한 자료를 이곳에 게시합니다. 교육·강연 의뢰는 <a href="#contact" style="color:var(--navy);font-weight:600;">연락처</a>로 보내주세요.</p>
+    <div class="pub-list">
+      <div class="pub-item">
+        <div class="meta">
+          <span class="type alt">강의자료</span><span class="type">지방재정</span>
+          <h3>광역연합의 재정 — 특별회계·재정분담·과세권, 그리고 통합과 연합의 갈림길</h3>
+          <div class="info">특별지방자치단체 의원 워크숍 자료 (2026. 8.) · 공개판</div>
+        </div>
+        <a class="download" href="lecture01.pdf" target="_blank" rel="noopener">PDF 보기</a>
       </div>
     </div>
   </div>
@@ -661,6 +681,12 @@
     <p class="section-lead">연구소를 만들고 꾸려가는 과정, 그리고 대학 밖에서 연구자로 살아가는 일에 대한 짧은 기록입니다.</p>
     <div class="diary-list">
       <div class="diary-item">
+        <div class="d-date">2026. 8. 28.</div>
+        <h3>몸이 깨어날 때 아프다</h3>
+        <p>며칠을 앓고 다시 깨어나는 아침의 기록. 무기력할 때는 아픔조차 느껴지지 않다가, 회복이 시작될 때 비로소 아프다 — 아픔은 고장의 신호가 아니라 회복의 신호다.</p>
+        <a href="dnote05.html">읽기 →</a>
+      </div>
+      <div class="diary-item">
         <div class="d-date">2026. 7. 31.</div>
         <h3>냉정한 법은 잠자는 자를 깨우지 않는다</h3>
         <p>해석론에서 법사회학까지, 연구 방법을 넓혀 온 여정. 법이 먼저 찾아가지 않는다면, 법을 아는 사람이 먼저 찾아가야 한다 — 나는 따뜻한 법을 만들고 싶다.</p>
@@ -672,19 +698,8 @@
         <p>니체의 세 가지 변화에 빗댄 마음의 기록. 짐이었던 일이 놀이가 되었다 — 낙타에서 사자를 지나, 어린아이의 시간으로.</p>
         <a href="dnote03.html">읽기 →</a>
       </div>
-      <div class="diary-item">
-        <div class="d-date">2026. 7. 23.</div>
-        <h3>첫 홈페이지를 만들며</h3>
-        <p>연구 철학을 담는 그릇을 남의 손에 맡기고 싶지 않았다. 월급이 나오는 것도 아닌데 밤잠을 설칠 만큼 행복한 요즘의 기록.</p>
-        <a href="dnote02.html">읽기 →</a>
-      </div>
-      <div class="diary-item">
-        <div class="d-date">2026. 7. 15.</div>
-        <h3>왜 독립연구를 선택했는가</h3>
-        <p>기관에서는 끝내 주어지지 않았던 '연구에 실패할 자유'를 누리기 위해, 그리고 현실에서 작동하는 실천 가능한 법학을 위해 독립을 선택했다.</p>
-        <a href="dnote01.html">읽기 →</a>
-      </div>
     </div>
+    <div style="margin-top:24px;"><a href="dnote.html" style="color:var(--navy);font-weight:600;font-size:.92rem;text-decoration:none;">소장 노트 전체 보기 →</a></div>
     <p class="diary-disclaimer">※ 이 코너의 글은 연구소의 공식 견해가 아닌 소장 개인의 기록입니다.</p>
   </div>
 </section>
@@ -701,11 +716,15 @@
         <p>군림하는 법이 아닌, 변화를 읽고 사람을 받드는 법. 그것이 제가 이 연구소를 시작한 이유입니다.</p>
         <div class="who">이지은 · 좋은법연구소 소장</div>
       </div>
-      <div class="wall-card invite">
-        이 자리는 당신의 문장을 기다리고 있습니다
+      <div class="wall-card">
+        <div class="qm">“</div>
+        <p>사람의 관계를 옭아매지 않고 풀어나가는, 그래서 최소한의 내용을 담은 법.</p>
+        <div class="who">강주영 · 제주대 법전원 교수</div>
       </div>
-      <div class="wall-card invite">
-        이 자리는 당신의 문장을 기다리고 있습니다
+      <div class="wall-card">
+        <div class="qm">“</div>
+        <p>구성원들이 그 내용의 타당성과 효력의 지속성에 대한 신뢰를 가지고 있어, 자신의 삶을 기획하는데 배경이 되는 사회적 환경에 관한 정보로 작용하는 법.</p>
+        <div class="who">이희정 · 한국공법학회 회장</div>
       </div>
     </div>
 

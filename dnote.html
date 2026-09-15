@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소장 노트 | 좋은법연구소</title>
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 88"><path d="M22 24 Q43 10 65 24 T108 24" fill="none" stroke="%231a2f4b" stroke-width="8" stroke-linecap="round"/><circle cx="43" cy="6" r="7" fill="%231a2f4b"/><circle cx="65" cy="11" r="9" fill="%23b08d57"/><circle cx="87" cy="6" r="7" fill="%231a2f4b"/><path d="M40 42 L40 76 L90 76 L90 42" fill="none" stroke="%23b08d57" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 58 L90 58" stroke="%23b08d57" stroke-width="8" stroke-linecap="round"/></svg>'>
+<meta name="description" content="좋은법연구소 소장 노트 전체 목록 — 연구소를 만들고 꾸려가는 과정, 그리고 대학 밖에서 연구자로 살아가는 일에 대한 짧은 기록입니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="좋은법연구소">
+<meta property="og:title" content="소장 노트 | 좋은법연구소">
+<meta property="og:description" content="연구소를 만들고 꾸려가는 과정, 그리고 대학 밖에서 연구자로 살아가는 일에 대한 짧은 기록입니다.">
+<link rel="canonical" href="https://goodlaw.re.kr/dnote.html">
+<meta property="og:url" content="https://goodlaw.re.kr/dnote.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2f4b;
+    --navy-light: #2c4a73;
+    --accent: #b08d57;
+    --alert: #a44a3f;
+    --bg: #fdfcfa;
+    --bg-alt: #f4f1ec;
+    --text: #2b2b2b;
+    --text-muted: #6b6b6b;
+    --border: #e3ded6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+  }
+  h1, h2, h3 { font-family: 'Noto Serif KR', serif; color: var(--navy); }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(253,252,250,.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1040px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Noto Serif KR', serif; font-weight: 700;
+    font-size: 1.05rem; color: var(--navy); text-decoration: none;
+    letter-spacing: .02em;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .nav-logo svg { display: block; }
+  .brand-sub {
+    display: inline-block; transform: translateY(-.28em);
+    font-size: .55em; color: var(--accent); font-weight: 500;
+    letter-spacing: .03em; margin-left: .35em;
+  }
+  .brand-gold { color: #9a7a48; }
+  footer .brand-gold { color: #d9bd8d; }
+  .nav-links { display: flex; gap: 22px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--text-muted);
+    font-size: .92rem; font-weight: 500; transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--navy); }
+
+  .article-head {
+    background: var(--bg-alt);
+    border-bottom: 1px solid var(--border);
+    padding: 64px 24px 48px;
+  }
+  .article-head-inner { max-width: 720px; margin: 0 auto; }
+  .note-label {
+    font-size: .8rem; font-weight: 700; letter-spacing: .18em;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 14px;
+  }
+  .article-head h1 { font-size: clamp(1.5rem, 3.2vw, 2rem); line-height: 1.45; }
+  .article-head .d-sub {
+    font-family: 'Noto Serif KR', serif;
+    font-size: .98rem; color: var(--text-muted); margin-top: 12px;
+  }
+
+  main { max-width: 720px; margin: 0 auto; padding: 56px 24px 40px; }
+  .note-list { display: flex; flex-direction: column; gap: 28px; }
+  .note-item {
+    background: #fff; border: 1px solid var(--border);
+    border-left: 4px solid var(--accent); border-radius: 6px;
+    padding: 24px 28px;
+  }
+  .note-item .d-no {
+    font-size: .74rem; font-weight: 700; letter-spacing: .14em;
+    color: var(--accent); text-transform: uppercase;
+  }
+  .note-item .d-date { font-size: .82rem; color: var(--text-muted); margin-top: 2px; }
+  .note-item h2 { font-size: 1.15rem; margin-top: 10px; line-height: 1.5; }
+  .note-item .d-sub {
+    font-family: 'Noto Serif KR', serif;
+    font-size: .9rem; color: var(--text-muted); margin-top: 2px;
+  }
+  .note-item p { font-size: .92rem; color: var(--text-muted); margin-top: 12px; line-height: 1.8; }
+  .note-item a.read {
+    display: inline-block; margin-top: 14px;
+    text-decoration: none; font-size: .9rem; font-weight: 600; color: var(--navy);
+  }
+  .note-item a.read:hover { color: var(--accent); }
+  .diary-disclaimer {
+    font-size: .78rem; color: var(--text-muted);
+    border-top: 1px dashed var(--border); padding-top: 18px; margin-top: 48px;
+  }
+
+  .note-nav {
+    max-width: 720px; margin: 0 auto; padding: 0 24px 72px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .note-nav a {
+    text-decoration: none; font-size: .9rem; font-weight: 500; color: var(--navy);
+  }
+  .note-nav a:hover { color: var(--accent); }
+
+  footer {
+    background: var(--navy); color: #9fb0c5;
+    padding: 36px 24px; font-size: .82rem;
+  }
+  .footer-inner { max-width: 1040px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer .brand-sub { color: #d9bd8d; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><svg width="32" height="22" viewBox="0 0 130 88" aria-hidden="true"><path d="M22 24 Q43 10 65 24 T108 24" fill="none" stroke="#1a2f4b" stroke-width="8" stroke-linecap="round"/><circle cx="43" cy="6" r="7" fill="#1a2f4b"/><circle cx="65" cy="11" r="9" fill="#b08d57"/><circle cx="87" cy="6" r="7" fill="#1a2f4b"/><path d="M40 42 L40 76 L90 76 L90 42" fill="none" stroke="#b08d57" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 58 L90 58" stroke="#b08d57" stroke-width="8" stroke-linecap="round"/></svg><span><span class="brand-gold">좋은법</span>연구소<span class="brand-sub">자치/재정</span></span></a>
+    <ul class="nav-links">
+      <li><a href="note01.html">현안 노트</a></li>
+      <li><a href="index.html">홈</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="article-head-inner">
+    <div class="note-label">Director's Note</div>
+    <h1>소장 노트</h1>
+    <div class="d-sub">연구소를 만들고 꾸려가는 과정, 그리고 대학 밖에서 연구자로 살아가는 일에 대한 짧은 기록입니다.</div>
+  </div>
+</header>
+
+<main>
+  <div class="note-list">
+
+    <article class="note-item">
+      <div class="d-no">소장 노트 05</div>
+      <div class="d-date">2026. 8. 28.</div>
+      <h2>몸이 깨어날 때 아프다</h2>
+      <div class="d-sub">— 앓고 난 아침의 기록</div>
+      <p>며칠을 앓고 다시 깨어나는 아침의 기록. 무기력할 때는 아픔조차 느껴지지 않다가, 회복이 시작될 때 비로소 아프다 — 아픔은 고장의 신호가 아니라 회복의 신호다.</p>
+      <a class="read" href="dnote05.html">읽기 →</a>
+    </article>
+
+    <article class="note-item">
+      <div class="d-no">소장 노트 04</div>
+      <div class="d-date">2026. 7. 31.</div>
+      <h2>냉정한 법은 잠자는 자를 깨우지 않는다</h2>
+      <div class="d-sub">— 나는 따뜻한 법을 만들고 싶다</div>
+      <p>해석론에서 법사회학까지, 연구 방법을 넓혀 온 여정. 법이 먼저 찾아가지 않는다면, 법을 아는 사람이 먼저 찾아가야 한다 — 나는 따뜻한 법을 만들고 싶다.</p>
+      <a class="read" href="dnote04.html">읽기 →</a>
+    </article>
+
+    <article class="note-item">
+      <div class="d-no">소장 노트 03</div>
+      <div class="d-date">2026. 7. 30.</div>
+      <h2>낙타, 사자, 어린아이</h2>
+      <p>니체의 세 가지 변화에 빗댄 마음의 기록. 짐이었던 일이 놀이가 되었다 — 낙타에서 사자를 지나, 어린아이의 시간으로.</p>
+      <a class="read" href="dnote03.html">읽기 →</a>
+    </article>
+
+    <article class="note-item">
+      <div class="d-no">소장 노트 02</div>
+      <div class="d-date">2026. 7. 23.</div>
+      <h2>첫 홈페이지를 만들며</h2>
+      <p>연구 철학을 담는 그릇을 남의 손에 맡기고 싶지 않았다. 월급이 나오는 것도 아닌데 밤잠을 설칠 만큼 행복한 요즘의 기록.</p>
+      <a class="read" href="dnote02.html">읽기 →</a>
+    </article>
+
+    <article class="note-item">
+      <div class="d-no">소장 노트 01</div>
+      <div class="d-date">2026. 7. 15.</div>
+      <h2>왜 독립연구를 선택했는가</h2>
+      <p>기관에서는 끝내 주어지지 않았던 '연구에 실패할 자유'를 누리기 위해, 그리고 현실에서 작동하는 실천 가능한 법학을 위해 독립을 선택했다.</p>
+      <a class="read" href="dnote01.html">읽기 →</a>
+    </article>
+
+  </div>
+
+  <p class="diary-disclaimer">※ 이 코너의 글은 연구소의 공식 견해가 아닌 소장 개인의 기록입니다.</p>
+</main>
+
+<div class="note-nav">
+  <a href="index.html">← 홈으로</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div style="display:flex;align-items:center;gap:10px;"><svg width="26" height="18" viewBox="0 0 130 88" aria-hidden="true"><path d="M22 24 Q43 10 65 24 T108 24" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/><circle cx="43" cy="6" r="7" fill="#ffffff"/><circle cx="65" cy="11" r="9" fill="#d9bd8d"/><circle cx="87" cy="6" r="7" fill="#ffffff"/><path d="M40 42 L40 76 L90 76 L90 42" fill="none" stroke="#d9bd8d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 58 L90 58" stroke="#d9bd8d" stroke-width="8" stroke-linecap="round"/></svg><span>© 2026 <span class="brand-gold">좋은법</span>연구소<span class="brand-sub">자치/재정</span> All rights reserved.</span></div>
+    <div>본 사이트의 저작물은 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ko" style="color:#d9bd8d;text-decoration:none;">CC BY-NC-ND 4.0</a>에 따라 출처를 표시하면 자유롭게 공유할 수 있으나, 영리 목적 이용과 변경은 허용되지 않습니다.</div>
+  </div>
+</footer>
+
+</body>
+</html>
