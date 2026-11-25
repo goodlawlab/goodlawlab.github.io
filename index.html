@@ -409,6 +409,20 @@
     padding: 36px 24px; font-size: .82rem;
   }
   .footer-inner { max-width: 1040px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  /* 아카이브 개설 배너 (2026. 11. — 한두 달 뒤 삭제) */
+  .announce { background: var(--bg-alt); border-bottom: 1px solid var(--border); }
+  .announce-inner {
+    max-width: 1040px; margin: 0 auto; padding: 14px 24px;
+    display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; font-size: .92rem;
+  }
+  .announce .tag {
+    font-size: .7rem; font-weight: 700; letter-spacing: .12em; color: #fff;
+    background: var(--alert); border-radius: 3px; padding: 2px 8px;
+  }
+  .announce .msg { color: var(--text); }
+  .announce .msg b { color: var(--navy); }
+  .announce a { color: var(--navy); font-weight: 700; text-decoration: none; white-space: nowrap; }
+  .announce a:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -432,7 +446,7 @@
       <li><a href="#agenda">핵심 어젠다</a></li>
       <li><a href="#notes">현안 노트</a></li>
       <li><a href="#reports">대안 리포트</a></li>
-      <li><a href="#lectures">교육·강연</a></li>
+      <li><a href="archive.html">아카이브</a></li>
       <li><a href="#data">데이터 진단</a></li>
       <li><a href="#director-note">소장 노트</a></li>
       <li><a href="#your-goodlaw">당신의 좋은법</a></li>
@@ -453,6 +467,15 @@
     <a class="btn ghost" href="#reports">대안 리포트</a>
   </div>
 </header>
+
+<!-- 아카이브 개설 배너: 2027. 1. 말 무렵 이 <div class="announce"> 덩어리를 지웁니다 -->
+<div class="announce">
+  <div class="announce-inner">
+    <span class="tag">NEW</span>
+    <span class="msg"><b>좋은법연구소 아카이브</b>를 공개합니다 — 충청광역연합의회 정책토론회(2026. 11. 23.) 발제 자료를 실었습니다.</span>
+    <a href="archive.html">아카이브 보기 →</a>
+  </div>
+</div>
 
 <div class="method-strip">
   <div class="method-inner">
@@ -631,21 +654,39 @@
   </div>
 </section>
 
-<section id="lectures">
+<section id="activities">
+  <span id="lectures"></span>
   <div class="section-inner">
-    <div class="section-label">Education &amp; Lectures</div>
-    <h2>교육·강연</h2>
-    <p class="section-lead">지방의회·지방자치단체·교육기관을 대상으로 진행한 교육과 강연 가운데, 공개 가능한 자료를 이곳에 게시합니다. 교육·강연 의뢰는 <a href="#contact" style="color:var(--navy);font-weight:600;">연락처</a>로 보내주세요.</p>
+    <div class="section-label">Archive</div>
+    <h2>최근 활동</h2>
+    <p class="section-lead">발제·토론·강의·자문의 기록과 공개 자료는 <a href="archive.html" style="color:var(--navy);font-weight:600;">좋은법연구소 아카이브</a>에서 볼 수 있습니다.</p>
     <div class="pub-list">
       <div class="pub-item">
         <div class="meta">
-          <span class="type alt">강의자료</span><span class="type">지방재정</span>
-          <h3>광역연합의 재정 — 특별회계·재정분담·과세권, 그리고 통합과 연합의 갈림길</h3>
-          <div class="info">특별지방자치단체 의원 워크숍 자료 (2026. 8.) · 공개판</div>
+          <span class="type alt">발제</span><span class="type">2026. 11. 23.</span>
+          <h3>특별지방자치단체의 재정 — 충청광역연합의 존재 이유와 재정구조 개선의 법적 조건</h3>
+          <div class="info">충청광역연합의회 정책토론회 (정부세종컨벤션센터)</div>
         </div>
-        <a class="download" href="lecture01.pdf" target="_blank" rel="noopener">PDF 보기</a>
+        <a class="download" href="archive.html#a2026-11-23">자세히 →</a>
+      </div>
+      <div class="pub-item">
+        <div class="meta">
+          <span class="type alt">자문</span><span class="type">2026. 10. 22.</span>
+          <h3>산업기술연구조합 조세지원에 관한 자문 — 육성법 제13조 분석과 조세특례 체계 내에서의 개선 방향</h3>
+          <div class="info">한국산업기술연구조합연합회 법제도분과위원회</div>
+        </div>
+        <a class="download" href="archive.html#a2026-10-22">자세히 →</a>
+      </div>
+      <div class="pub-item">
+        <div class="meta">
+          <span class="type alt">토론</span><span class="type">2026. 9. 21.</span>
+          <h3>「2027년 예산안」과 「2026~2030년 국가재정운용계획」에 대한 전문가 의견 — 미래대응기금 분야</h3>
+          <div class="info">한국조세재정연구원 「2027년 예산안 및 국가재정운용계획 전문가 평가」 토론회</div>
+        </div>
+        <a class="download" href="archive.html#a2026-09-21">자세히 →</a>
       </div>
     </div>
+    <div style="margin-top:24px;"><a href="archive.html" style="color:var(--navy);font-weight:600;font-size:.92rem;text-decoration:none;">아카이브 전체 보기 →</a></div>
   </div>
 </section>
 
@@ -681,6 +722,12 @@
     <p class="section-lead">연구소를 만들고 꾸려가는 과정, 그리고 대학 밖에서 연구자로 살아가는 일에 대한 짧은 기록입니다.</p>
     <div class="diary-list">
       <div class="diary-item">
+        <div class="d-date">2026. 11. 25.</div>
+        <h3>소장님의 소확행!</h3>
+        <p>7월에 연구소를 열고 다섯 달. 아홉 시를 넘겨 일하지 않고, 주말에 쉬고, 끼니를 챙기고, 기한을 지키는 일 — 나를 챙기다 보니 연구소도 자리를 잡았다.</p>
+        <a href="dnote06.html">읽기 →</a>
+      </div>
+      <div class="diary-item">
         <div class="d-date">2026. 8. 28.</div>
         <h3>몸이 깨어날 때 아프다</h3>
         <p>며칠을 앓고 다시 깨어나는 아침의 기록. 무기력할 때는 아픔조차 느껴지지 않다가, 회복이 시작될 때 비로소 아프다 — 아픔은 고장의 신호가 아니라 회복의 신호다.</p>
@@ -691,30 +738,6 @@
         <h3>냉정한 법은 잠자는 자를 깨우지 않는다</h3>
         <p>해석론에서 법사회학까지, 연구 방법을 넓혀 온 여정. 법이 먼저 찾아가지 않는다면, 법을 아는 사람이 먼저 찾아가야 한다 — 나는 따뜻한 법을 만들고 싶다.</p>
         <a href="dnote04.html">읽기 →</a>
-      </div>
-      <div class="diary-item">
-        <div class="d-date">2026. 7. 30.</div>
-        <h3>낙타, 사자, 어린아이</h3>
-        <p>니체의 세 가지 변화에 빗댄 마음의 기록. 짐이었던 일이 놀이가 되었다 — 낙타에서 사자를 지나, 어린아이의 시간으로.</p>
-        <a href="dnote03.html">읽기 →</a>
-      </div>
-    </div>
-    <div style="margin-top:24px;"><a href="dnote.html" style="color:var(--navy);font-weight:600;font-size:.92rem;text-decoration:none;">소장 노트 전체 보기 →</a></div>
-    <p class="diary-disclaimer">※ 이 코너의 글은 연구소의 공식 견해가 아닌 소장 개인의 기록입니다.</p>
-  </div>
-</section>
-
-<section id="your-goodlaw">
-  <div class="section-inner">
-    <div class="section-label">Your Good Law</div>
-    <h2>당신이 생각하는 '좋은법'은 무엇인가요?</h2>
-    <p class="section-lead">좋은법은 연구실이 아니라 살아가는 사람들의 감각 속에 있다고 믿습니다. 방문하신 인사를 겸해, 당신의 '좋은법'을 한 문장으로 남겨주세요. 보내주신 글은 선별하여 이 벽에 게시합니다.</p>
-
-    <div class="wall-grid">
-      <div class="wall-card">
-        <div class="qm">“</div>
-        <p>군림하는 법이 아닌, 변화를 읽고 사람을 받드는 법. 그것이 제가 이 연구소를 시작한 이유입니다.</p>
-        <div class="who">이지은 · 좋은법연구소 소장</div>
       </div>
       <div class="wall-card">
         <div class="qm">“</div>
